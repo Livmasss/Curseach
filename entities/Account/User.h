@@ -1,10 +1,12 @@
 #ifndef CURSEACH_USER_H
 #define CURSEACH_USER_H
 
-#import "Loginable.h"
+#include <vector>
+#include "Loginable.h"
 #include "../Train/Ticket.h"
 
 
+using namespace std;
 struct Passport {
     int series;
     int number;
@@ -16,7 +18,7 @@ struct Passport {
 
 class User : Loginable {
     Passport passport;
-    list<Ticket> ticks;
+    vector<Ticket> ticks;
     bool rent();
     bool cancelRent();
 };
