@@ -7,6 +7,8 @@
 class Admin : Loginable {
     bool newTrip();
     bool cancelTrip();
+    static Admin logIn();
+    static Admin reg();
 };
 
 

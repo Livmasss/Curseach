@@ -18,12 +18,12 @@ class Train {
 private:
     vector<Carriage *> cars;
     string locate;
-    TrainTags tags;
+    TrainTags *tags;
 public:
-    Train(vector<Carriage *> cars_ = vector<Carriage *>(), TrainTags tags_ = TrainTags());
+    Train(vector<Carriage *> cars_ = vector<Carriage *>(), TrainTags *tags_ = new TrainTags());
     int getLength();
-    Carriage getCarriage(int index);
-    
+    Carriage *getCarriage(int index);
+    TrainTags *getTrainTags();
 };
 
 

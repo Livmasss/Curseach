@@ -24,12 +24,16 @@ Moment PointOfTrip::getDeparture() {
     return departureMoment;
 }
 
-Trip::Trip(Train train_, vector<PointOfTrip> points) {
-    train = std::move(train_);
+Trip::Trip(Train *train_, vector<PointOfTrip> points) {
+    train = train_;
     pots = std::move(points);
     status = notStarted;
     if (pots.empty())
         return;
     startMoment = pots.at(0).getDeparture();
     endMoment = pots.at(pots.size() - 1).getArrive();
+}
+
+Train *Trip::getTrain() {
+    return train;
 }

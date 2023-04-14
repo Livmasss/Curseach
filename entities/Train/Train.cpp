@@ -7,7 +7,7 @@ TrainTags::TrainTags(bool restaurant, bool hasPetsPermission) {
     petsPermission = hasPetsPermission;
 }
 
-Train::Train(vector<Carriage *> cars_, TrainTags tags_) {
+Train::Train(vector<Carriage *> cars_, TrainTags *tags_) {
     cars = std::move(cars_);
     tags = tags_;
 }
@@ -16,6 +16,10 @@ int Train::getLength() {
     return cars.size();
 }
 
-Carriage Train::getCarriage(int index) {
-    return *cars.at(index);
+Carriage *Train::getCarriage(int index) {
+    return cars.at(index);
+}
+
+TrainTags *Train::getTrainTags() {
+    return tags;
 }

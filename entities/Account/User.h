@@ -3,7 +3,8 @@
 
 #include <vector>
 #include "Loginable.h"
-#include "../Train/Ticket.h"
+#include "../Ticket.h"
+#include "../LifeCircle.h"
 
 
 using namespace std;
@@ -17,10 +18,14 @@ struct Passport {
 
 
 class User : Loginable {
+private:
     Passport passport;
     vector<Ticket> ticks;
+public:
     bool rent();
     bool cancelRent();
+    static User logIn(string username, string password, LifeCircle circle);
+    static User reg(string username, string password, LifeCircle circle);
 };
 
 

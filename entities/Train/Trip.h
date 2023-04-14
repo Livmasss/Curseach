@@ -45,13 +45,14 @@ enum Status {
 
 class Trip {
 private:
-    Train train;
+    Train *train;
     vector<PointOfTrip> pots;
     Moment startMoment;
     Moment endMoment;
     Status status;
 public:
-    Trip(Train train_ = Train(), vector<PointOfTrip> points = vector<PointOfTrip>());
+    Trip(Train *train_ = new Train(), vector<PointOfTrip> points = vector<PointOfTrip>());
+    Train *getTrain();
 };
 
 

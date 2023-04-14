@@ -7,10 +7,8 @@ using namespace std;
 class Loginable {
     string login;
     string password;
-    bool logIn();
-    bool logOut();
-    bool reg();
-    bool del();
+    void logOut();
+    void del();
 };
 
 
